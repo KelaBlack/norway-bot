@@ -1,13 +1,11 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from config import SPREADSHEET_NAME, CREDENTIALS_PATH
+SPREADSHEET_NAME = "Данные для бота"
 
-SCOPE = [
-    "https://spreadsheets.google.com/feeds",
-    "https://www.googleapis.com/auth/drive"
-]
+SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+CREDENTIALS_PATH = "/etc/secrets/credentials.json"  # ← обязательно абсолютный путь!
 
-# Авторизация и подключение к Google Таблице
+
 creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_PATH, SCOPE)
 client = gspread.authorize(creds)
 
