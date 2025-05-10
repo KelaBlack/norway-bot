@@ -1,3 +1,4 @@
+from typing import List, Dict
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 SPREADSHEET_NAME = "Данные для бота"
@@ -10,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_PATH, SCOPE
 client = gspread.authorize(creds)
 
 # Получение цен по городу и парку
-def get_prices_for_park(city: str, park: str) -> list[dict]:
+def get_prices_for_park(city: str, park: str) -> List[Dict]:
     try:
         sheet = client.open_by_key(SPREADSHEET_NAME).worksheet("Цены")
         data = sheet.get_all_records()
