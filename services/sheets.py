@@ -1,7 +1,9 @@
 from typing import List, Dict
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-SPREADSHEET_NAME = "Данные для бота"
+import os
+SPREADSHEET_NAME = os.getenv("SPREADSHEET_NAME")
+
 
 SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 CREDENTIALS_PATH = "/etc/secrets/credentials.json"  # ← обязательно абсолютный путь!

@@ -12,6 +12,8 @@ from handlers.back import get_back_handler
 from handlers.addresses import get_addresses_handler
 from handlers.faq import get_faq_handler, get_faq_category_handler, get_faq_answer_handler  # 🧠 FAQ
 from handlers.event import get_event_handler
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Инициализация приложения
